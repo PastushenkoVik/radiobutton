@@ -1,0 +1,28 @@
+@import '../../style/variables';
+
+.color-radio {
+    &-button {
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        text-align: left;
+
+        input {
+            cursor: pointer;
+        }
+    }
+
+    &-blue {
+        color: $blue;
+    }
+    
+    &-red {
+        color: $red;
+    }
+
+    &-green {
+        color: $green;
+    }
+}

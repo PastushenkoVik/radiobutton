@@ -1,0 +1,32 @@
+@import '../../style/variables';
+
+.color {
+    &-radiobutton {
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        flex-wrap: wrap;
+
+        height: 30vh;
+        width: 90px;
+        padding: 20px;
+        border: 2px solid;
+        border-radius: 20px;
+
+        &-border-blue {
+            color: $blue;
+        }
+        
+        &-border-red {
+            color: $red;
+        }
+
+        &-border-green {
+            color: $green;
+        }
+    }
+
+    &-wrapper {
+        width: 100%;
+    }
+}
