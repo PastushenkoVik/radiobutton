@@ -4,12 +4,12 @@ import shortid from 'shortid';
 import './ColorRadioButtons.scss';
 import ColorRadioButton from '../ColorRadioButton/ColorRadioButton';
 
-const ColorRadioButtons = ({ changeBorderColorHandle, radioItems }) => {
+const ColorRadioButtons = ({ changeRadioButtonHandle, radioItems }) => {
     const [borderColor, changeBorderColor] = useState('');
 
     const setBorderColor = (id, colorName) => {
         changeBorderColor(`color-radiobutton-border-${colorName}`);
-        changeBorderColorHandle(id);
+        changeRadioButtonHandle(id);
     }
 
     return (
