@@ -24,15 +24,15 @@ const colorItems = [
 function App() {
   const [colorRadioItems, setColorRadioItems] = useState(colorItems);
 
-  function changeColorHandler(id) {
-    setColorRadioItems(colorItems.map((item) => ({ ...item, isSelect: item.id === id ? true : false})));
-  }
+  const changeBorderColorHandle = (id) => (
+    setColorRadioItems(colorItems.map((item) => ({ ...item, isSelect: item.id === id ? true : false})))
+  );
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <ColorRadioButtons buttonSelectedHandler={changeColorHandler} radioItems={colorRadioItems} />
+        <ColorRadioButtons changeBorderColorHandle={changeBorderColorHandle} radioItems={colorRadioItems} />
       </header>
     </div>
   );

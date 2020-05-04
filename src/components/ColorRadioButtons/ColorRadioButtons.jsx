@@ -4,21 +4,23 @@ import shortid from 'shortid';
 import './ColorRadioButtons.scss';
 import ColorRadioButton from '../ColorRadioButton/ColorRadioButton';
 
-const ColorRadioButtons = ({ buttonSelectedHandler, radioItems }) => {
+const ColorRadioButtons = ({ changeBorderColorHandle, radioItems }) => {
     const [borderColor, changeBorderColor] = useState('');
 
-    function setBorderColor(colorName) {
+    const setBorderColor = (id, colorName) => {
         changeBorderColor(`color-radiobutton-border-${colorName}`);
-    };
+        changeBorderColorHandle(id);
+    }
 
     return (
         <form className={`color-radiobutton ${borderColor}`}>
             <div className="color-wrapper">
-                {radioItems.map((radioItem) => (<ColorRadioButton 
-                    key={shortid.generate()} 
-                    radioButtonHandler={setBorderColor} 
-                    buttonSelectedHandler={buttonSelectedHandler}
-                    {...radioItem} />))}            
+                {radioItems.map((radioItem) => 
+                    <ColorRadioButton 
+                        key={shortid.generate()} 
+                        radioButtonHandler={setBorderColor} 
+                        {...radioItem} 
+                    />)}
             </div>
         </form>
     );

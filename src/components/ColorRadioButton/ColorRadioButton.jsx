@@ -2,16 +2,18 @@ import React from 'react';
 
 import './ColorRadioButton.scss';
 
-const ColorRadioButton = ({ radioButtonHandler, buttonSelectedHandler, id, name, isSelect }) => {
+const ColorRadioButton = ({
+    id, 
+    isSelect, 
+    name, 
+    radioButtonHandler, 
+}) => {
 
     return (
         <label
-             htmlFor={name} 
+            htmlFor={name} 
             className="color-radio-button"
-            onClick={() => {
-                radioButtonHandler(name);
-                buttonSelectedHandler(id);
-            }}>
+            onClick={() => radioButtonHandler(id, name)}>
             <span className={`color-radio-${name}`}>{name}</span>
             {isSelect
                 ? <input id={name} type="radio" name="color" checked/>
