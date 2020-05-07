@@ -24,5 +24,17 @@ module.exports = {
   rules: {
     'react/jsx-props-no-spreading': ['off'],
     'react-hooks/rules-of-hooks': 'error',
+    'jsx-a11y/no-noninteractive-element-interactions': [
+      'warn',
+      {
+        handlers: [
+          'onMouseDown',
+          'onMouseUp',
+          'onKeyPress',
+          'onKeyDown',
+          'onKeyUp',
+        ],
+      },
+    ],
   },
 };
