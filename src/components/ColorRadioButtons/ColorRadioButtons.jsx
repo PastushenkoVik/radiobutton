@@ -12,7 +12,7 @@ const ColorRadioButtons = ({ changeRadioButtonHandle, radioItems }) => {
     document.title = borderColor === ''
       ? '-'
       : String(borderColor.split('-').slice(-1)).toUpperCase();
-  });
+  }, [borderColor]);
 
   const setBorderColor = (id, colorName) => {
     changeBorderColor(`color-radiobutton-border-${colorName}`);
@@ -36,11 +36,13 @@ const ColorRadioButtons = ({ changeRadioButtonHandle, radioItems }) => {
 
 ColorRadioButtons.propTypes = {
   changeRadioButtonHandle: PropTypes.func.isRequired,
-  radioItems: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    isSelect: PropTypes.bool.isRequired,
-  })).isRequired,
+  radioItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      isSelect: PropTypes.bool.isRequired,
+    }),
+  ).isRequired,
 };
 
 export default ColorRadioButtons;
