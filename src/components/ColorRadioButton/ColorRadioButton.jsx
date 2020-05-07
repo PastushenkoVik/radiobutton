@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import './ColorRadioButton.scss';
 
@@ -21,5 +22,12 @@ const ColorRadioButton = ({
       : <input id={name} type="radio" name="color" />}
   </label>
 );
+
+ColorRadioButton.propTypes = {
+  id: PropTypes.number.isRequired,
+  isSelect: PropTypes.bool.isRequired,
+  name: PropTypes.string.isRequired,
+  radioButtonHandler: PropTypes.func.isRequired,
+};
 
 export default ColorRadioButton;

@@ -7,7 +7,7 @@ const colorItems = [
   {
     id: 0,
     name: 'blue',
-    isSelect: true,
+    isSelect: false,
   },
   {
     id: 1,
