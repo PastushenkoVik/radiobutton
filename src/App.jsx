@@ -7,7 +7,7 @@ const colorItems = [
   {
     id: 0,
     name: 'blue',
-    isSelect: false,
+    isSelect: true,
   },
   {
     id: 1,
@@ -25,14 +25,17 @@ function App() {
   const [colorRadioItems, setColorRadioItems] = useState(colorItems);
 
   const changeRadioButtonHandle = (id) => (
-    setColorRadioItems(colorItems.map((item) => ({ ...item, isSelect: (item.id === id)})))
+    setColorRadioItems(colorItems.map((item) => ({ ...item, isSelect: (item.id === id) })))
   );
 
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <ColorRadioButtons changeRadioButtonHandle={changeRadioButtonHandle} radioItems={colorRadioItems} />
+        <ColorRadioButtons
+          changeRadioButtonHandle={changeRadioButtonHandle}
+          radioItems={colorRadioItems}
+        />
       </header>
     </div>
   );
