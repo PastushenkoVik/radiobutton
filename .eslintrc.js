@@ -10,6 +10,7 @@ module.exports = {
     Atomics: 'readonly',
     SharedArrayBuffer: 'readonly',
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -23,10 +24,17 @@ module.exports = {
   ],
   rules: {
     'react/jsx-props-no-spreading': ['off'],
+    'react/jsx-filename-extension': [
+      1, {
+        extensions: ['.js', '.jsx'] 
+      }
+    ],
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'react/state-in-constructor': [1, 'never'],
+    'react/destructuring-assignment': [1, 'always', { "ignoreClassFields": true }],
     'jsx-a11y/no-noninteractive-element-interactions': [
-      'warn',
+      'error',
       {
         handlers: [
           'onMouseDown',
@@ -37,5 +45,14 @@ module.exports = {
         ],
       },
     ],
+    'sort-keys': [
+      'error', 
+      'asc', 
+      {
+        caseSensitive: true,
+        natural: true,
+        minKeys: 2
+      }
+    ]
   },
 };

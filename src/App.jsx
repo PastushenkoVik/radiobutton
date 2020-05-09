@@ -6,18 +6,18 @@ import ColorRadioButtons from './components/ColorRadioButtons/ColorRadioButtons'
 const colorItems = [
   {
     id: 0,
-    name: 'blue',
     isSelect: false,
+    name: 'blue',
   },
   {
     id: 1,
-    name: 'red',
     isSelect: false,
+    name: 'red',
   },
   {
     id: 2,
-    name: 'green',
     isSelect: false,
+    name: 'green',
   },
 ];
 

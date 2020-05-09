@@ -39,8 +39,8 @@ ColorRadioButtons.propTypes = {
   radioItems: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
       isSelect: PropTypes.bool.isRequired,
+      name: PropTypes.string.isRequired,
     }),
   ).isRequired,
 };
