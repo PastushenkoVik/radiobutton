@@ -24,9 +24,14 @@ const colorItems = [
 function App() {
   const [colorRadioItems, setColorRadioItems] = useState(colorItems);
 
-  const changeRadioButtonHandle = (id) => (
-    setColorRadioItems(colorItems.map((item) => ({ ...item, isSelect: (item.id === id) })))
-  );
+  const changeRadioButtonHandle = (id) => {
+    const switchColorSelect = (item) => ({
+      ...item,
+      isSelect: (item.id === id),
+    });
+
+    setColorRadioItems(colorItems.map(switchColorSelect));
+  };
 
   return (
     <div className="App">

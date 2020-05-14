@@ -19,16 +19,18 @@ const ColorRadioButtons = ({ changeRadioButtonHandle, radioItems }) => {
     changeRadioButtonHandle(id);
   };
 
+  const colorRadioButton = (radioItem) => (
+    <ColorRadioButton
+      key={shortid.generate()}
+      radioButtonHandler={setBorderColor}
+      {...radioItem}
+    />
+  );
+
   return (
     <form className={`color-radiobutton ${borderColor}`}>
       <div className="color-wrapper">
-        {radioItems.map((radioItem) => (
-          <ColorRadioButton
-            key={shortid.generate()}
-            radioButtonHandler={setBorderColor}
-            {...radioItem}
-          />
-        ))}
+        {radioItems.map(colorRadioButton)}
       </div>
     </form>
   );
